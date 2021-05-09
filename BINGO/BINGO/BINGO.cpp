@@ -62,9 +62,9 @@ void getPlayerInput(int player, int* playerInput, const int size)
 }
 
 //**********************************************************//
-// isInteger is a function that checks if the input from the
-// player is actually an integer that can be checked for
-// validity.
+// isInteger is a function that checks if the input from the//
+// player is actually an integer that can be checked for	//
+// validity.												//
 //**********************************************************//
 bool isInteger(const string& str)
 {
