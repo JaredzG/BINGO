@@ -79,10 +79,12 @@ void Board::nextTurn()
 	setRandom();
 }
 
+//**********************************************************//
 // drawBoard is a function that displays the two player		//
 // boards as output in the console. It facilitates the		//
 // occurrences of when numbers in the board match the		//
 // randomly generated numbers, turning into zeros.			//
+//**********************************************************//
 void Board::drawBoard(int player, int* board)
 {
 	cout << endl
