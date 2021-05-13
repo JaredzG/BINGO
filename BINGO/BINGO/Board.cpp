@@ -7,11 +7,11 @@
 using namespace std;
 
 //**********************************************************//
-// Board is a constructor that allocates memory for the		//
-// two player boards and to hold the random numbers that	//
-// have been chosen. Also, this function initializes the	//
-// private variables of the Board class, and sets the seed	//
-// for the random number generator.							//
+// Board is a constructor that allocates memory for the	
+// two player boards and to hold the random numbers that
+// have been chosen. Also, this function initializes the
+// private variables of the Board class, and sets the seed
+// for the random number generator.
 //**********************************************************//
 Board::Board()
 {
@@ -33,8 +33,8 @@ Board::Board()
 }
 
 //**********************************************************//
-// setBoard is a function that places the user-input numbers//
-// into their respective boards.							//
+// setBoard is a function that places the user-input numbers
+// into their respective boards.
 //**********************************************************//
 void Board::setBoard(int playerOneInput[], int playerTwoInput[])
 {
@@ -47,19 +47,19 @@ void Board::setBoard(int playerOneInput[], int playerTwoInput[])
 }
 
 //**********************************************************//
-// nextTurn is a function that initiates the next turn of	//
-// the bingo game. It first calls the drawBoard method to	//
-// display each of the players' boards according to the		//
-// initial player input and any changes that have been made.//
-// After the boards are drawn, it calls the checkWin method,//
-// which checks if any player(s) have met the conditions	//
-// to win. If any player(s) have won, then nextTurn calls	//
-// the displayWinner function which prints a message		//
-// indicating who won. After every iteration of the			//
-// boards being drawn, nextTurn lets the user press a key	//
-// to continue to the next turn. Finally, nextTurn calls	//
-// the setRandom function to set the next random number to	//
-// be checked.												//
+// nextTurn is a function that initiates the next turn of
+// the bingo game. It first calls the drawBoard method to
+// display each of the players' boards according to the
+// initial player input and any changes that have been made.
+// After the boards are drawn, it calls the checkWin method,
+// which checks if any player(s) have met the conditions
+// to win. If any player(s) have won, then nextTurn calls
+// the displayWinner function which prints a message
+// indicating who won. After every iteration of the
+// boards being drawn, nextTurn lets the user press a key
+// to continue to the next turn. Finally, nextTurn calls
+// the setRandom function to set the next random number to
+// be checked.
 //**********************************************************//
 void Board::nextTurn()
 {
@@ -80,10 +80,10 @@ void Board::nextTurn()
 }
 
 //**********************************************************//
-// drawBoard is a function that displays the two player		//
-// boards as output in the console. It facilitates the		//
-// occurrences of when numbers in the board match the		//
-// randomly generated numbers, turning into zeros.			//
+// drawBoard is a function that displays the two player
+// boards as output in the console. It facilitates the
+// occurrences of when numbers in the board match the
+// randomly generated numbers, turning into zeros.
 //**********************************************************//
 void Board::drawBoard(int player, int* board)
 {
@@ -174,23 +174,23 @@ void Board::drawBoard(int player, int* board)
 }
 
 //**********************************************************//
-// setRandom is a function sets the next random number to be//
-// checked for in the boards. A random number is only set if//
-// it is within the bounds, from 10 to 40, and if the number//
-// has not been chosen before. These criteria are tested by	//
-// calling the checkRandomValidity function. This function	//
-// then displays the random number that was successfully	//
-// generated and the amount of random numbers that have been//
-// chosen. Finally, the checkAndReplace function is called	//
-// to check if the random number is in any of the boards	//
-// and, if it is, then, in the board(s), it will be replaced//
-// with a zero.												//
+// setRandom is a function sets the next random number to be
+// checked for in the boards. A random number is only set if
+// it is within the bounds, from 10 to 40, and if the number
+// has not been chosen before. These criteria are tested by
+// calling the checkRandomValidity function. This function
+// then displays the random number that was successfully
+// generated and the amount of random numbers that have been
+// chosen. Finally, the checkAndReplace function is called
+// to check if the random number is in any of the boards
+// and, if it is, then, in the board(s), it will be replaced
+// with a zero.
 //**********************************************************//
 void Board::setRandom()
 {
 	do
 	{
-		random = (rand() % 31) + MIN_RANDOM_VALUE;
+		random = (rand() % UNIQUE_RANDOM_LIMIT) + MIN_RANDOM_VALUE;
 	} while (!checkRandomValidity());
 	cout << "The random number is: " << random << endl;
 	cout << "The number of random numbers chosen is: "
@@ -199,24 +199,24 @@ void Board::setRandom()
 }
 
 //**********************************************************//
-// checkRandomValidity is a function that tests if the		//
-// random number that was generated by the setRandom		//
-// function is valid. The criteria for validity is that the	//
-// number should be between 10 and 40 inclusive, and the	//
-// random number should not have been chosen before. Each	//
-// time the random number is invalid, checkRandomValidity	//
-// returns a false boolean, causing the setRandom function	//
-// to generate another random number to be tested. If the	//
-// random number is valid, the number of unique random		//
-// numbers gets incremented. Even before testing the random	//
-// number's validity, this function tests if the amount of	//
-// random numbers that have been successfully chosen matches//
-// the maximum amount of random numbers possible,			//
-// UNIQUE_RANDOM_LIMIT, which has the value of 31. If there	//
-// have already been 31 random numbers chosen, then the		//
-// displayWinner function is called with the playerWin		//
-// boolean variable, which is still false if the checkWin	//
-// function has not set it to true, passed to it.			//
+// checkRandomValidity is a function that tests if the
+// random number that was generated by the setRandom
+// function is valid. The criteria for validity is that the
+// number should be between 10 and 40 inclusive, and the
+// random number should not have been chosen before. Each
+// time the random number is invalid, checkRandomValidity
+// returns a false boolean, causing the setRandom function
+// to generate another random number to be tested. If the
+// random number is valid, the number of unique random
+// numbers gets incremented. Even before testing the random
+// number's validity, this function tests if the amount of
+// random numbers that have been successfully chosen matches
+// the maximum amount of random numbers possible,
+// UNIQUE_RANDOM_LIMIT, which has the value of 31. If there
+// have already been 31 random numbers chosen, then the
+// displayWinner function is called with the playerWin
+// boolean variable, which is still false if the checkWin
+// function has not set it to true, passed to it.
 //**********************************************************//
 bool Board::checkRandomValidity()
 {
@@ -244,12 +244,12 @@ bool Board::checkRandomValidity()
 }
 
 //**********************************************************//
-// checkAndReplace checks if the random number that was		//
-// chosen is in any of the boards, and, if it is, then the	//
-// number in the board(s) that matches it gets turned into	//
-// a zero. After every number in the boards gets checked	//
-// and replaced, if it was possible, then nextTurn is		//
-// called to display the two updated boards.				//
+// checkAndReplace checks if the random number that was
+// chosen is in any of the boards, and, if it is, then the
+// number in the board(s) that matches it gets turned into
+// a zero. After every number in the boards gets checked
+// and replaced, if it was possible, then nextTurn is
+// called to display the two updated boards.
 //**********************************************************//
 void Board::checkAndReplace()
 {
@@ -264,8 +264,8 @@ void Board::checkAndReplace()
 }
 
 //**********************************************************//
-// checkWin is a function that evaluates whether any of the	//
-// players have won.										//
+// checkWin is a function that evaluates whether any of the
+// players have won.
 //**********************************************************//
 void Board::checkWin()
 {
@@ -274,8 +274,8 @@ void Board::checkWin()
 }
 
 //**********************************************************//
-// horizontalCheck is a function that determines if any		//
-// player has an entire row of zeros on their board.		//
+// horizontalCheck is a function that determines if any
+// player has an entire row of zeros on their board.
 //**********************************************************//
 bool Board::horizontalCheck()
 {
@@ -307,8 +307,8 @@ bool Board::horizontalCheck()
 }
 
 //**********************************************************//
-// verticalCheck is a function that determines if any		//
-// player has an entire column of zeros on their board.		//
+// verticalCheck is a function that determines if any
+// player has an entire column of zeros on their board.
 //**********************************************************//
 bool Board::verticalCheck()
 {
@@ -340,8 +340,8 @@ bool Board::verticalCheck()
 }
 
 //**********************************************************//
-// diagonalCheck is a function that determines if any		//
-// player has an entire diagonal of zeros on their board.	//
+// diagonalCheck is a function that determines if any
+// player has an entire diagonal of zeros on their board.
 //**********************************************************//
 bool Board::diagonalCheck()
 {
@@ -361,8 +361,8 @@ bool Board::diagonalCheck()
 }
 
 //**********************************************************//
-// cornerCheck is a function that determines if any			//
-// player has zeros in all of the corners of their board.	//
+// cornerCheck is a function that determines if any
+// player has zeros in all of the corners of their board.
 //**********************************************************//
 bool Board::cornerCheck()
 {
@@ -378,8 +378,8 @@ bool Board::cornerCheck()
 }
 
 //**********************************************************//
-// displayWinner prints a message indicating which players,	//
-// if any, have won.										//
+// displayWinner prints a message indicating which players,
+// if any, have won.
 //**********************************************************//
 void Board::displayWinner(bool playerWin)
 {
