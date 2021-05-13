@@ -33,9 +33,9 @@ public:
 	void setBoard(int[], int[]);
 
 //**********************************************************//
-// This is a destructor to deallocate the memory temporarily//
-// used to store the player bingo boards and the unique		//
-// random numbers that have been selected.					//
+// This is a destructor to deallocate the memory temporarily
+// used to store the player bingo boards and the unique
+// random numbers that have been selected.
 //**********************************************************//
 	~Board()
 	{
