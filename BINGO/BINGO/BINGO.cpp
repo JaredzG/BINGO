@@ -20,11 +20,11 @@ int main()
 }
 
 //**********************************************************//
-// getPlayerInput is a function that gets numbers from the	//
-// players to input into their boards. This function also	//
-// makes sure that the player input is valid by checking the//
-// input bounds itself and if the input is duplicated by	//
-// calling the checkInputDuplicate function.				//
+// getPlayerInput is a function that gets numbers from the
+// players to input into their boards. This function also
+// makes sure that the player input is valid by checking the
+// input bounds itself and if the input is duplicated by
+// calling the checkInputDuplicate function.
 //**********************************************************//
 void getPlayerInput(int player, int* playerInput, const int size)
 {
@@ -62,9 +62,9 @@ void getPlayerInput(int player, int* playerInput, const int size)
 }
 
 //**********************************************************//
-// isInteger is a function that checks if the input from the//
-// player is actually an integer that can be checked for	//
-// validity.												//
+// isInteger is a function that checks if the input from the
+// player contains only digits that can be checked for
+// validity.
 //**********************************************************//
 bool isInteger(const string& str)
 {
@@ -79,9 +79,9 @@ bool isInteger(const string& str)
 }
 
 //**********************************************************//
-// checkInputDuplicate is a function that checks the		//
-// validity of player input on the basis of whether it is	//
-// a duplicate of previously input data.					//
+// checkInputDuplicate is a function that checks the
+// validity of player input on the basis of whether it is
+// a duplicate of previously input data.
 //**********************************************************//
 bool checkInputDuplicate(int num, int playerInput[], const int size)
 {
